@@ -1,0 +1,57 @@
+<FilmsScreen>:
+
+    BoxLayout:
+        size_hint: None, None
+        size: 400, 600
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+        orientation: 'vertical'
+        spacing: 20
+        padding: 20, 50  # Отступы (горизонтальный, вертикальный)
+
+        # Верхняя часть для отображения имени пользователя
+        BoxLayout:
+            size_hint: None, None
+            size: 400, 50
+            pos_hint: {'center_x': 0.5}
+            Label:
+                id: username_label
+                text: "Hello"
+                font_size: 24
+                halign: 'center'
+                valign: 'middle'
+                text_size: self.size
+
+        # Кнопки управления
+        BoxLayout:
+            orientation: 'vertical'
+            spacing: 20
+            padding: 0, 50
+            size_hint: None, None
+            size: 400, 400
+
+            Button:
+                text: 'Просмотрено'
+                size_hint: None, None
+                size: 200, 50
+                pos_hint: {'center_x': 0.46}
+                background_color: 0.286, 0.149, 0.42, 1
+                on_release:
+                    app.root.current = 'films_watched'
+
+            Button:
+                text: 'В очереди'
+                size_hint: None, None
+                size: 200, 50
+                pos_hint: {'center_x': 0.46}
+                background_color: 0.286, 0.149, 0.42, 1
+                on_release:
+                    app.root.current = 'planned_films'
+
+            Button:
+                text: 'Выйти'
+                size_hint: None, None
+                size: 200, 50
+                pos_hint: {'center_x': 0.46}
+                background_color: 0.286, 0.149, 0.42, 1
+                on_release:
+                    app.root.current = 'login'

@@ -1,0 +1,34 @@
+<FilmsWatchedScreen>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 20
+
+        Button:
+            text: 'Добавить фильм'
+            size_hint_y: None
+            height: 50
+            background_color: 0.286, 0.149, 0.42, 1
+            on_release: root.open_add_film_popup()
+
+        Button:
+            text: 'Статистика'
+            size_hint_y: None
+            height: 50
+            background_color: 0.286, 0.149, 0.42, 1
+            on_release: root.show_statistics()
+
+        Button:
+            text: 'Назад'
+            size_hint_y: None
+            height: 50
+            background_color: 0.286, 0.149, 0.42, 1
+            on_release: app.root.current = 'films'
+
+        ScrollView:
+            BoxLayout:
+                orientation: 'vertical'
+                id: films_list
+                size_hint_y: None
+                height: self.minimum_height
+                padding: 10

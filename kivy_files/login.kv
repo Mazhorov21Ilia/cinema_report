@@ -1,0 +1,60 @@
+<LoginScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 0
+        spacing: 0
+
+        # Внешний контейнер для центрирования
+        BoxLayout:
+            size_hint: (1, 1)  # Растяжение на весь экран
+            orientation: 'vertical'
+            padding: 160
+            spacing: 0
+            pos_hint: {'center_y': 0.5}  # Центрирование по вертикали
+
+            # Центрируемый блок с фиксированным содержимым
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint: (None, None)
+                size: (300, 350)  # Общий размер содержимого
+                pos_hint: {'center_x': 0.5}  # Горизонтальное центрирование
+                spacing: 15  # Расстояние между элементами
+                
+
+                Label:
+                    text: 'Вход в систему'
+                    font_size: 24
+                    size_hint_y: None
+                    height: 50
+
+                TextInput:
+                    id: username
+                    hint_text: 'Имя пользователя'
+                    multiline: False
+                    size_hint: (None, None)
+                    size: (300, 40)
+
+                TextInput:
+                    id: password
+                    hint_text: 'Пароль'
+                    password: True
+                    multiline: False
+                    size_hint: (None, None)
+                    size: (300, 40)
+
+                Button:
+                    text: 'Войти'
+                    size_hint: (None, None)
+                    size: (300, 50)
+                    background_color: 0.286, 0.149, 0.42, 1
+                    on_release:
+                        root.login()
+
+                Button:
+                    text: 'Зарегистрироваться'
+                    size_hint: (None, None)
+                    size: (300, 50)
+                    background_color: 0.286, 0.149, 0.42, 1
+                    on_release:
+                        root.registration()
